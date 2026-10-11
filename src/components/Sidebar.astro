@@ -1,0 +1,34 @@
+---
+import { getCollection } from "astro:content";
+
+const posts = await getCollection("blog");
+---
+
+<nav class="sidebar">
+  <h1>KAI JONES</h1>
+  <div class="spacer"></div>
+  <ul>
+    <li class="active nav-btn">
+      <a href="/"><span>Home</span></a>
+    </li>
+    {
+      posts.map((post) => (
+        <li class="nav-btn">
+          <a href={`/blog/${post.id}`}>{post.data.title}</a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>
+<style>
+  .sidebar {
+    padding: 30px 0 30px 29px;
+  }
+
+  .nav-btn:hover {
+  }
+
+  .spacer {
+    height: 40px;
+  }
+</style>
