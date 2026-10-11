@@ -14,7 +14,7 @@ const posts = await getCollection("blog");
     {
       posts.map((post) => (
         <li class="nav-btn">
-          <a href={`/posts/${post.id}`}>{post.data.title}</a>
+          <a href={`/blog/posts/${post.id}`}>{post.data.title}</a>
         </li>
       ))
     }
