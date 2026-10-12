@@ -7,6 +7,10 @@ const posts = await getCollection("blog");
 
 console.log("Anzahl der Blogposts:", posts.length);
 console.log("Blogposts:", posts);
+console.log(
+  "Post-Pfade:",
+  posts.map((post) => `/blog/posts/${post.id}`),
+);
 
 const sortedPosts = posts.sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
