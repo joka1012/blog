@@ -23,9 +23,9 @@ const { title = "My Blog" } = Astro.props;
       <Sidebar class="sidebar" />
       <main>
         <slot />
+        <Footer />
       </main>
     </div>
-    <Footer />
   </body>
   <style>
     .layout {
